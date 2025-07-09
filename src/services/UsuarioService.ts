@@ -8,6 +8,10 @@ export const UsuarioService = {
         return await repo.find();
     },
 
+   async buscar(id: number): Promise<Usuarios | null> {
+        return await repo.findOneBy({ id });
+    },
+
     async adicionar(data: Partial<Usuarios>): Promise<Usuarios> {
         const usuario = repo.create(data);
         await repo.save(usuario);

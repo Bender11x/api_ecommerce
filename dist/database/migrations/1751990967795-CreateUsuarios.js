@@ -38,6 +38,7 @@ class CreateUsuarios1751990967795 {
         }));
     }
     async down(queryRunner) {
+        await queryRunner.dropTable("usuarios");
     }
 }
 exports.CreateUsuarios1751990967795 = CreateUsuarios1751990967795;
