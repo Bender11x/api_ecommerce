@@ -5,7 +5,9 @@ const repo = AppDataSource.getRepository(Usuarios);
 
 export const UsuarioService = {
     async listar(): Promise<Usuarios[]> {
-        return await repo.find();
+        return await repo.find({
+                select: ["id", "nome", "email"]
+        });
     },
 
    async buscar(id: number): Promise<Usuarios | null> {
